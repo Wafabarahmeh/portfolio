@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wafa Barahmeh | Software Developer Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --dark-color: #101828;
+      --muted-color: #667085;
+      --light-bg: #f8fafc;
+      --card-border: #e5e7eb;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark-color);
+      background-color: #ffffff;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 55%, #f7f9fc 100%);
+      padding-top: 120px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #eaf2ff;
+      color: #0d6efd;
+      border: 1px solid #cfe2ff;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: var(--muted-color);
+      font-size: 1.12rem;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .hero-card {
+      border: 1px solid var(--card-border);
+      border-radius: 26px;
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(16, 24, 40, 0.10);
+    }
+
+    .profile-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid #eaf2ff;
+      background-color: #dbeafe;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted-color);
+      max-width: 720px;
+      margin: 0 auto 50px;
+      font-size: 1.05rem;
+    }
+
+    .about-box {
+      background-color: var(--light-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 34px;
+    }
+
+    .stat-card {
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      padding: 24px;
+      height: 100%;
+      background-color: #ffffff;
+    }
+
+    .stat-card h3 {
+      font-weight: 900;
+      color: var(--primary-color);
+      margin-bottom: 6px;
+    }
+
+    .project-card,
+    .skill-card,
+    .service-card {
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 12px 35px rgba(16, 24, 40, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background-color: #ffffff;
+    }
+
+    .project-card:hover,
+    .skill-card:hover,
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(16, 24, 40, 0.12);
+    }
+
+    .project-image {
+      height: 210px;
+      background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--primary-color);
+    }
+
+    .badge-tech {
+      background-color: #eef4ff;
+      color: #175cd3;
+      border: 1px solid #c7d7fe;
+      font-weight: 600;
+      margin: 3px;
+    }
+
+    .skill-icon,
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background-color: #eaf2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .upwork-box {
+      background: #101828;
+      color: #ffffff;
+      border-radius: 26px;
+      padding: 38px;
+    }
+
+    .upwork-box p,
+    .upwork-box li {
+      color: #d0d5dd;
+    }
+
+    .copy-box {
+      background-color: #0b1220;
+      border: 1px solid #344054;
+      border-radius: 18px;
+      padding: 22px;
+      color: #e5e7eb;
+      white-space: pre-wrap;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .contact-section {
+      background-color: #101828;
+      color: #ffffff;
+    }
+
+    .contact-section .section-subtitle {
+      color: #d0d5dd;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0d6efd;
+      color: #ffffff;
+      margin: 7px;
+      font-size: 1.35rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-4px);
+      background-color: #084298;
+      color: #ffffff;
+    }
+
+    footer {
+      background-color: #0b1220;
+      color: #98a2b3;
+      padding: 22px 0;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-card {
+        margin-top: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Wafa Barahmeh</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="hero-badge"><i class="bi bi-person-badge"></i> Personal Brand • Software Engineer • Team Lead</div>
+          <h1>I fix and build financial systems that businesses depend on daily.</h1>
+          <p>
+            I specialize in fixing slow systems, correcting financial calculation issues, and building reliable enterprise applications. I turn complex business problems into fast, accurate, and production-ready solutions.
+          </p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+            <a href="#contact" class="btn btn-primary btn-lg px-4">Hire Me</a>
+            <a href="#projects" class="btn btn-outline-primary btn-lg px-4">See My Work</a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="hero-card text-center">
+            <img src="images/about/profile.jpg" alt="Profile Image" class="profile-placeholder mb-4" />
+            <h3 class="fw-bold">Software Engineer</h3>
+            <p class="mb-0">
+              Experienced Software Engineer since 2016, specializing in ASP.NET MVC, Oracle databases, RESTful APIs, and scalable enterprise systems.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- What I Can Help You With -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="about-box text-center">
+            <h3 class="fw-bold mb-3">What can I help you with?</h3>
+            <p>✔ Fix slow systems and SQL performance issues</p>
+            <p>✔ Fix wrong financial calculations and reports</p>
+            <p>✔ Build new modules for existing systems</p>
+            <p>✔ Improve database design and backend logic</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        A software developer focused on clean business logic, accurate financial calculations, stable database design, and practical solutions that make daily operations faster and easier.
+      </p>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <div class="about-box">
+            <h3 class="fw-bold mb-3">I build systems that businesses rely on daily.</h3>
+            <p>
+              I have been working in software development since 2016 at FIS Distribution, with strong experience in ASP.NET MVC, C#, Oracle SQL, PL/SQL, RESTful APIs, and enterprise system development.
+            </p>
+            <p>
+              My work includes building large-scale systems such as finance systems, insurance systems, banking systems, and core platforms, along with database design, API development, and system integration.
+            </p>
+            <p class="mb-0">
+              I can help clients build new modules, fix existing systems, automate reports, clean database logic, and deliver reliable web applications for finance, insurance, and operations teams.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="stat-card text-center">
+                <h3>8+</h3>
+                <p class="mb-0">Years Experience</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card text-center">
+                <h3>SQL</h3>
+                <p class="mb-0">Advanced Queries</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card text-center">
+                <h3>C#</h3>
+                <p class="mb-0">Backend Logic</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card text-center">
+                <h3>Excel</h3>
+                <p class="mb-0">Reports Export</p>
+              </div>
+            </div>
+          </div>
+        </div>
+            <div class="service-card p-5 mt-4">
+        <h3 class="fw-bold mb-4">Optimizing Slow SQL Queries in Financial Reports</h3>
+
+        <h5 class="fw-bold">Problem</h5>
+        <p>
+          Financial reports were taking a long time to load due to complex SQL queries on large transaction tables. Users experienced delays and sometimes timeouts when generating reports.
+        </p>
+
+        <h5 class="fw-bold mt-4">Solution</h5>
+        <p>
+          I analyzed execution plans and identified inefficient joins and missing indexes. I refactored the queries and optimized database structures to improve performance.
+        </p>
+
+        <ul>
+          <li>Analyzed execution plans to detect bottlenecks</li>
+          <li>Optimized joins and filtering conditions</li>
+          <li>Added indexes on frequently queried columns</li>
+          <li>Reduced data processing by improving query structure</li>
+        </ul>
+
+        <h5 class="fw-bold mt-4">Result</h5>
+        <p>
+          Reduced query execution time by up to 70%, improved system performance, and enabled near-instant report generation for end users.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="section-subtitle">Core services based on real production experience.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4">
+            <div class="service-icon"><i class="bi bi-window-sidebar"></i></div>
+            <h4 class="fw-bold">ASP.NET MVC Development</h4>
+            <p>Build and maintain scalable web applications using ASP.NET MVC, C#, REST APIs, and modern front-end technologies.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4">
+            <div class="service-icon"><i class="bi bi-database-check"></i></div>
+            <h4 class="fw-bold">Oracle SQL & PL/SQL</h4>
+            <p>Design and optimize Oracle databases, PL/SQL procedures, and complex queries for high-performance systems.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4">
+            <div class="service-icon"><i class="bi bi-file-earmark-spreadsheet"></i></div>
+            <h4 class="fw-bold">Excel Report Automation</h4>
+            <p>Create technical solutions including reporting, system enhancements, and automation for enterprise environments.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4">
+            <div class="service-icon"><i class="bi bi-cash-coin"></i></div>
+            <h4 class="fw-bold">Financial Systems</h4>
+            <p>Develop enterprise systems including finance, insurance, and banking platforms with strong business logic.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4">
+            <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+            <h4 class="fw-bold">Insurance Systems</h4>
+            <p>Design and implement scalable microservices architectures and distributed systems.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card p-4">
+            <div class="service-icon"><i class="bi bi-speedometer2"></i></div>
+            <h4 class="fw-bold">System Fixes & Optimization</h4>
+            <p>Perform code reviews, debug complex issues, and improve system performance and code quality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Work With Me -->
+  <section id="why">
+    <div class="container">
+      <h2 class="section-title">Why Work With Me</h2>
+      <p class="section-subtitle">Clear value for clients — not just code.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="service-card p-4">
+            <h4 class="fw-bold">Business Understanding</h4>
+            <p>I don’t just code — I understand accounting, finance, and business workflows.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card p-4">
+            <h4 class="fw-bold">Reliable Systems</h4>
+            <p>I build systems that handle real data without breaking or producing wrong results.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card p-4">
+            <h4 class="fw-bold">Fast Problem Solving</h4>
+            <p>I can jump into existing systems, fix issues, and improve performance quickly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section id="case-study" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Case Study</h2>
+      <p class="section-subtitle">Real problem. Real solution. Real impact.</p>
+
+      <div class="service-card p-5">
+        <h3 class="fw-bold mb-4">Fixing Unbalanced Financial Entries Across Branches</h3>
+
+        <h5 class="fw-bold">Problem</h5>
+        <p>
+          The system was generating financial entries where debit and credit were not balanced across branches. This caused reporting inconsistencies and required manual corrections from the finance team.
+        </p>
+
+        <h5 class="fw-bold mt-4">Solution</h5>
+        <p>
+          I analyzed the transaction structure and identified that cross-branch operations were missing intermediate accounting entries. I designed and implemented a solution using intermediate ledger accounts to automatically balance transactions.
+        </p>
+
+        <ul>
+          <li>Added logic for branch-based balancing</li>
+          <li>Introduced intermediate accounts (ledger 2128)</li>
+          <li>Ensured debit = credit per branch and currency</li>
+          <li>Automated entry generation using SQL and backend logic</li>
+        </ul>
+
+        <h5 class="fw-bold mt-4">Result</h5>
+        <p>
+          Eliminated over 90% of manual corrections, improved financial accuracy, and ensured all accounting entries are balanced automatically across branches.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Portfolio Projects</h2>
+      <p class="section-subtitle">Realistic projects based on financial, insurance, reporting, and database work.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-image"><i class="bi bi-journal-check"></i></div>
+            <div class="card-body p-4">
+              <h4 class="fw-bold">Rhodes Finance System</h4>
+              <p>Full-stack financial system developed for managing enterprise financial operations, transactions, and reporting.</p>
+              <div class="mb-3">
+                <span class="badge badge-tech">C#</span>
+                <span class="badge badge-tech">ASP.NET MVC</span>
+                <span class="badge badge-tech">Oracle SQL</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-image"><i class="bi bi-diagram-3"></i></div>
+            <div class="card-body p-4">
+              <h4 class="fw-bold">Rhodes Banking System</h4>
+              <p>Enterprise banking system supporting transactions, accounts, and core banking operations.</p>
+              <div class="mb-3">
+                <span class="badge badge-tech">Oracle</span>
+                <span class="badge badge-tech">PL/SQL</span>
+                <span class="badge badge-tech">Finance</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-image"><i class="bi bi-file-earmark-excel"></i></div>
+            <div class="card-body p-4">
+              <h4 class="fw-bold">Rhodes Core System</h4>
+              <p>Core enterprise system providing shared services and central business logic across applications.</p>
+              <div class="mb-3">
+                <span class="badge badge-tech">EPPlus</span>
+                <span class="badge badge-tech">Excel</span>
+                <span class="badge badge-tech">C#</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-image"><i class="bi bi-shield-plus"></i></div>
+            <div class="card-body p-4">
+              <h4 class="fw-bold">Rhodes General Insurance System</h4>
+              <p>Full-stack insurance system handling policies, endorsements, and insurance workflows.</p>
+              <div class="mb-3">
+                <span class="badge badge-tech">Insurance</span>
+                <span class="badge badge-tech">Workflow</span>
+                <span class="badge badge-tech">MVC</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-image"><i class="bi bi-search"></i></div>
+            <div class="card-body p-4">
+              <h4 class="fw-bold">RESTful API Services</h4>
+              <p>Designed and implemented RESTful APIs to enable seamless communication between systems.</p>
+              <div class="mb-3">
+                <span class="badge badge-tech">SQL</span>
+                <span class="badge badge-tech">Validation</span>
+                <span class="badge badge-tech">Reports</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <div class="project-image"><i class="bi bi-graph-up-arrow"></i></div>
+            <div class="card-body p-4">
+              <h4 class="fw-bold">Microservices Architecture</h4>
+              <p>Designed scalable microservices-based architecture to improve modularity and system performance.</p>
+              <div class="mb-3">
+                <span class="badge badge-tech">SQL</span>
+                <span class="badge badge-tech">Analytics</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">Technical skills focused on enterprise business applications.</p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="skill-card p-4 text-center">
+            <div class="skill-icon mx-auto"><i class="bi bi-code-square"></i></div>
+            <h5 class="fw-bold">C# / ASP.NET MVC</h5>
+            <p>Backend logic, controllers, views, validations, and enterprise web modules.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="skill-card p-4 text-center">
+            <div class="skill-icon mx-auto"><i class="bi bi-database"></i></div>
+            <h5 class="fw-bold">Oracle SQL / PL/SQL</h5>
+            <p>Queries, procedures, views, data validation, financial calculations, and optimization.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="skill-card p-4 text-center">
+            <div class="skill-icon mx-auto"><i class="bi bi-bootstrap"></i></div>
+            <h5 class="fw-bold">HTML5 / CSS3 / JavaScript</h5>
+            <p>Strong front-end skills with modern UI development and responsive design.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="skill-card p-4 text-center">
+            <div class="skill-icon mx-auto"><i class="bi bi-filetype-xlsx"></i></div>
+            <h5 class="fw-bold">RESTful APIs</h5>
+            <p>Design and implementation of APIs for system integration and communication.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upwork Texts -->
+  
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Client Feedback</h2>
+      <p class="section-subtitle">What working with me feels like.</p>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="service-card p-4">
+            <p>"Very strong developer. Fixed complex financial calculation issues in our system quickly and accurately."</p>
+            <h6 class="fw-bold mt-3">— Finance Manager</h6>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="service-card p-4">
+            <p>"Understands business logic deeply, not just coding. Highly recommended for financial systems."</p>
+            <h6 class="fw-bold mt-3">— Technical Lead</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="container text-center">
+      <h2 class="section-title">Contact Me</h2>
+      <p class="section-subtitle">Open to new opportunities, collaborations, and building impactful systems.</p>
+
+      <div class="row justify-content-center mb-4">
+      <div class="col-12 mb-4">
+        <h4 class="fw-bold">Let’s work together</h4>
+        <p>If you have a system to build, fix, or improve — send me a message.</p>
+      </div>
+        <div class="col-md-5">
+          <a class="contact-item" href="mailto:wafa.barahmeh@yahoo.com">
+            <i class="bi bi-envelope-fill"></i> wafa.barahmeh@yahoo.com
+          </a>
+        </div>
+        <div class="col-md-5">
+          <a class="contact-item" href="tel:+972562666290">
+            <i class="bi bi-telephone-fill"></i> +972562666290
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a href="https://www.linkedin.com/in/wafa-barahmeh-577b25107/" target="_blank" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Wafabarahmeh" target="_blank" class="social-icon" title="GitHub"><i class="bi bi-github"></i></a>
+        
+        <a href="#" class="social-icon" title="Email"><i class="bi bi-envelope-fill"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="mb-0">© 2026 Wafa Barahmeh. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
