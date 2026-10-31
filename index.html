@@ -131,7 +131,7 @@
     .hero-card {
       border: 1px solid var(--card-border);
       border-radius: 26px;
-      background-color: #ffffff;
+      background-color: #111827;
       padding: 30px;
       box-shadow: 0 20px 60px rgba(16, 24, 40, 0.10);
     }
@@ -210,7 +210,7 @@
       border: 1px solid var(--card-border);
       padding: 24px;
       height: 100%;
-      background-color: #ffffff;
+      background-color: #111827;
     }
 
     .stat-card h3 {
@@ -260,7 +260,7 @@
       width: 64px;
       height: 64px;
       border-radius: 18px;
-      background-color: #eaf2ff;
+      background-color: #1e1b4b;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -455,6 +455,14 @@
         margin-top: 35px;
       }
     }
+    .navbar-brand { color: #f8fafc !important; }
+    .navbar-toggler { border-color: rgba(255,255,255,.4); }
+    .stat-card p { color: #cbd5e1; }
+    .project-card p, .service-card p, .skill-card p { color: #cbd5e1; }
+    .hero { background-color: #0b0f1a; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
   </style>
 </head>
 <body>
@@ -465,7 +473,7 @@
     </div>
   </div>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#home">Wafa Barahmeh</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -500,7 +508,6 @@
             <a href="#projects" class="btn btn-outline-primary btn-lg px-4">See My Work</a>
           </div>
         </div>
-        </div>
       </div>
 
       <!-- What I Can Help You With -->
@@ -532,10 +539,10 @@
           <div class="about-box">
             <h3 class="fw-bold mb-3">I build systems that businesses rely on daily.</h3>
             <p>
-              I have been working in software development since 2016 at FIS Distribution, with strong experience in ASP.NET MVC, C#, Oracle SQL, PL/SQL, RESTful APIs, and enterprise system development.
+              I have worked in software development since 2016, with strong experience in ASP.NET MVC, C#, Oracle SQL, PL/SQL, RESTful APIs, and enterprise system development.
             </p>
             <p>
-              My work includes building large-scale systems such as finance systems, insurance systems, banking systems, and core platforms, along with database design, API development, and system integration.
+              My work focuses on enterprise finance and insurance systems, including accounting workflows, reporting, database design, backend development, and integrations.
             </p>
             <p class="mb-0">
               I can help clients build new modules, fix existing systems, automate reports, clean database logic, and deliver reliable web applications for finance, insurance, and operations teams.
@@ -546,8 +553,8 @@
           <div class="row g-3">
             <div class="col-6">
               <div class="stat-card text-center">
-                <h3>8+</h3>
-                <p class="mb-0">Years Experience</p>
+                <h3>2016</h3>
+                <p class="mb-0">Career Start</p>
               </div>
             </div>
             <div class="col-6">
@@ -580,19 +587,19 @@
 
         <h5 class="fw-bold mt-4">Solution</h5>
         <p>
-          I analyzed execution plans and identified inefficient joins and missing indexes. I refactored the queries and optimized database structures to improve performance.
+          I reviewed query structure, filtering logic, and database access patterns to identify opportunities to reduce unnecessary processing.
         </p>
 
         <ul>
-          <li>Analyzed execution plans to detect bottlenecks</li>
+          <li>Reviewed database access patterns and reporting bottlenecks</li>
           <li>Optimized joins and filtering conditions</li>
-          <li>Added indexes on frequently queried columns</li>
+          <li>Evaluated indexing and query design where appropriate</li>
           <li>Reduced data processing by improving query structure</li>
         </ul>
 
         <h5 class="fw-bold mt-4">Result</h5>
         <p>
-          Reduced query execution time by up to 70%, improved system performance, and enabled near-instant report generation for end users.
+          Improved report responsiveness and reduced unnecessary database processing. Exact performance results depend on the workload and environment.
         </p>
       </div>
 
@@ -637,7 +644,7 @@
           <div class="service-card p-4 fade-up">
             <div class="service-icon"><i class="bi bi-shield-check"></i></div>
             <h4 class="fw-bold">Insurance Systems</h4>
-            <p>Design and implement scalable microservices architectures and distributed systems.</p>
+            <p>Develop and maintain insurance workflows, policy-related modules, validations, and operational reporting.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -666,13 +673,13 @@
         <div class="col-md-4">
           <div class="service-card p-4 fade-up">
             <h4 class="fw-bold">Reliable Systems</h4>
-            <p>I build systems that handle real data without breaking or producing wrong results.</p>
+            <p>I focus on correctness, validation, and maintainability in data-intensive applications.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="service-card p-4 fade-up">
             <h4 class="fw-bold">Fast Problem Solving</h4>
-            <p>I can jump into existing systems, fix issues, and improve performance quickly.</p>
+            <p>I investigate existing systems, trace complex issues, and prioritize maintainable fixes.</p>
           </div>
         </div>
       </div>
@@ -690,24 +697,24 @@
 
         <h5 class="fw-bold">Problem</h5>
         <p>
-          The system was generating financial entries where debit and credit were not balanced across branches. This caused reporting inconsistencies and required manual corrections from the finance team.
+          Cross-branch financial workflows required careful treatment of inter-branch accounting entries to preserve balanced posting and consistent reporting.
         </p>
 
         <h5 class="fw-bold mt-4">Solution</h5>
         <p>
-          I analyzed the transaction structure and identified that cross-branch operations were missing intermediate accounting entries. I designed and implemented a solution using intermediate ledger accounts to automatically balance transactions.
+          I worked on accounting logic for inter-branch transactions, including intermediary ledger entries and validation of debit and credit totals.
         </p>
 
         <ul>
           <li>Added logic for branch-based balancing</li>
-          <li>Introduced intermediate accounts (ledger 2128)</li>
+          <li>Used intermediary ledger accounts for cross-branch workflows</li>
           <li>Ensured debit = credit per branch and currency</li>
           <li>Automated entry generation using SQL and backend logic</li>
         </ul>
 
         <h5 class="fw-bold mt-4">Result</h5>
         <p>
-          Eliminated over 90% of manual corrections, improved financial accuracy, and ensured all accounting entries are balanced automatically across branches.
+          Strengthened accounting consistency and reduced reliance on manual intervention in cross-branch posting workflows.
         </p>
       </div>
     </div>
@@ -717,14 +724,14 @@
   <section id="projects">
     <div class="container">
       <h2 class="section-title">Portfolio Projects</h2>
-      <p class="section-subtitle">Realistic projects based on financial, insurance, reporting, and database work.</p>
+      <p class="section-subtitle">Selected enterprise domains and examples of work. Proprietary source code and client data are not shared.</p>
       <div class="row g-4">
         <div class="col-md-6 col-lg-4">
           <div class="project-card fade-up">
             <div class="project-image"><i class="bi bi-journal-check"></i></div>
             <div class="card-body p-4">
               <h4 class="fw-bold">Rhodes Finance System</h4>
-              <p>Full-stack financial system developed to improve transaction handling, reporting accuracy, and enterprise financial operations.</p>
+              <p>Contributed to financial workflows, accounting transactions, closing processes, and operational reports in an enterprise system.</p>
               <div class="mb-3">
                 <span class="badge badge-tech">C#</span>
                 <span class="badge badge-tech">ASP.NET MVC</span>
@@ -740,7 +747,7 @@
             <div class="project-image"><i class="bi bi-diagram-3"></i></div>
             <div class="card-body p-4">
               <h4 class="fw-bold">Rhodes Banking System</h4>
-              <p>Enterprise banking system supporting accounts, transactions, and core operations with reliable business logic and database integration.</p>
+              <p>Enterprise financial operations experience involving transaction processing, data integrity, and database integration.</p>
               <div class="mb-3">
                 <span class="badge badge-tech">Oracle</span>
                 <span class="badge badge-tech">PL/SQL</span>
@@ -756,7 +763,7 @@
             <div class="project-image"><i class="bi bi-file-earmark-excel"></i></div>
             <div class="card-body p-4">
               <h4 class="fw-bold">Rhodes Core System</h4>
-              <p>Core enterprise platform providing shared services, reusable logic, and stable integrations across multiple business applications.</p>
+              <p>Worked with shared enterprise components, reporting features, and integration-oriented backend logic.</p>
               <div class="mb-3">
                 <span class="badge badge-tech">EPPlus</span>
                 <span class="badge badge-tech">Excel</span>
@@ -772,7 +779,7 @@
             <div class="project-image"><i class="bi bi-shield-plus"></i></div>
             <div class="card-body p-4">
               <h4 class="fw-bold">Rhodes General Insurance System</h4>
-              <p>Full-stack insurance system designed to organize policy workflows, endorsements, and insurance operations more efficiently.</p>
+              <p>Contributed to insurance modules, policy-related workflows, validations, and business operations.</p>
               <div class="mb-3">
                 <span class="badge badge-tech">Insurance</span>
                 <span class="badge badge-tech">Workflow</span>
@@ -788,7 +795,7 @@
             <div class="project-image"><i class="bi bi-search"></i></div>
             <div class="card-body p-4">
               <h4 class="fw-bold">RESTful API Services</h4>
-              <p>Designed and implemented RESTful APIs that improved system integration and reduced manual data processing between applications.</p>
+              <p>Built and maintained RESTful endpoints for application features and integration workflows.</p>
               <div class="mb-3">
                 <span class="badge badge-tech">SQL</span>
                 <span class="badge badge-tech">Validation</span>
@@ -803,8 +810,8 @@
           <div class="project-card fade-up">
             <div class="project-image"><i class="bi bi-graph-up-arrow"></i></div>
             <div class="card-body p-4">
-              <h4 class="fw-bold">Microservices Architecture</h4>
-              <p>Designed scalable microservices-based architecture to improve modularity, maintainability, and system performance.</p>
+              <h4 class="fw-bold">Financial Reporting & Reconciliation</h4>
+              <p>Worked on financial reporting, reconciliation logic, and data validation for enterprise accounting workflows.</p>
               <div class="mb-3">
                 <span class="badge badge-tech">SQL</span>
                 <span class="badge badge-tech">Analytics</span>
@@ -858,27 +865,7 @@
   <!-- Upwork Texts -->
   
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="bg-light">
-    <div class="container">
-      <h2 class="section-title">Client Feedback</h2>
-      <p class="section-subtitle">What working with me feels like.</p>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="service-card p-4 fade-up">
-            <p>"Very strong developer. Fixed complex financial calculation issues in our system quickly and accurately."</p>
-            <h6 class="fw-bold mt-3">— Finance Manager</h6>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="service-card p-4 fade-up">
-            <p>"Understands business logic deeply, not just coding. Highly recommended for financial systems."</p>
-            <h6 class="fw-bold mt-3">— Technical Lead</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Testimonials intentionally omitted until verified client feedback is available. -->
 
   <!-- Contact -->
   <section id="contact" class="contact-section">
@@ -889,7 +876,7 @@
       <div class="row justify-content-center mb-4">
       <div class="col-12 mb-4">
         <h4 class="fw-bold">Let’s work together</h4>
-        <p>Tell me your problem — I’ll help you fix it fast.</p>
+        <p>Tell me about your project, technical challenge, or engineering opportunity.</p>
         <a href="https://wa.me/972562666290" target="_blank" class="btn btn-primary btn-lg mt-2 px-4">Chat on WhatsApp</a>
       </div>
         <div class="col-md-5">
@@ -905,7 +892,7 @@
       </div>
 
       <div>
-        <a href="https://www.linkedin.com/in/wafa-barahmeh-577b25107/" target="_blank" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/wafa-barahmeh" target="_blank" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
         <a href="https://github.com/Wafabarahmeh" target="_blank" class="social-icon" title="GitHub"><i class="bi bi-github"></i></a>
         
         <a href="mailto:wafa.barahmeh@yahoo.com" class="social-icon" title="Email"><i class="bi bi-envelope-fill"></i></a>
